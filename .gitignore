@@ -1,0 +1,22 @@
+data/*
+!data/*.sh
+
+*.mp4
+*.mp3
+*.png
+*.wav
+*.zip
+*.pdf
+*.edf
+*.hdf5
+*.csv
+*.png
+
+# Latex temp files
+*.aux
+*.bbl
+*.log
+
+# .png files used in the template
+!thesis/images/*.png
+!thesis/figures/ExampleXP_spectrogram/ExampleXP_spectrogram-1.png
