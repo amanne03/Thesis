@@ -1,0 +1,35 @@
+#!/bin/bash
+
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --mem=16G
+#SBATCH --time=0-0:30
+#SBATCH --partition=rosa.p
+#SBATCH --output=logs/check_setup.%j.out
+#SBATCH --error=logs/check_setup.%j.err
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=firstname.name@uni-oldenburg.de
+
+# Start with:
+# sbatch check_setup.job
+
+# Environment was created with:
+#
+# module load hpc-env/13.1
+# module load  Anaconda3/2023.09-0
+#
+# conda create --name Manne_2025_Master-3.11.4 python=3.11.4
+# conda activate Manne_2025_Master-3.11.4
+# pip install -r requirements.txt
+
+mkdir -p logs
+
+module load hpc-env/13.1
+
+eval "$(command conda 'shell.bash' 'hook' 2> /dev/null)"
+conda init bash
+conda activate Manne_2025_Master-3.11.4
+
+# Gives 1 as argument to allow script to know if on HPC
+python check_setup.py $USER
+
