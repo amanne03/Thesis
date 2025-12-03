@@ -11,7 +11,7 @@ DETAILS OF PUBLICATION TO BE ADDED
 In order to use the included code and replicate the results, you will need:
 
 1. A working Python environment (see next session) 
-2. Access to the HPC of the Uni Oldenburg
+2. Access to the HPC 
 3. Be part of the agamt group on the HPC (to access the used data)
 
 
